@@ -48,7 +48,7 @@ dependencies:
   supabase_flutter: ^2.3.0
   flutter_dotenv: ^5.1.0
   # ML Model Integration
-  tflite: ^1.1.2
+  # tflite: ^1.1.2
   # tflite_flutter: ^0.10.3
   
   # State Management
@@ -89,7 +89,7 @@ dev_dependencies:
 flutter:
   assets:
   
-    - assets/model/
+    # - assets/model/
     - assets/images/
     - assets/icons/
     - .env

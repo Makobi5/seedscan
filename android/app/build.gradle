@@ -1,3 +1,4 @@
+apply plugin: 'kotlin-android'
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -25,8 +26,7 @@ if (flutterVersionName == null) {
 def kotlin_version = '1.7.10'
 
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
 
 android {
     namespace "com.example.seed_scan"
@@ -38,9 +38,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = '1.8'
+    afterEvaluate {
+    android.kotlinOptions {
+        jvmTarget = '1.8'  // or whatever version you had previously
     }
+}
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
